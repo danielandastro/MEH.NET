@@ -178,6 +178,11 @@ namespace MehRewrite
                         Console.WriteLine("But I feel bad so here is the link to novabench: https://novabench.com");
                         Console.WriteLine("they can run a benchmark for you. :-)");
                         break;
+                    case"exit":
+                        return;
+
+                        case"nuke it":
+                        return;
                     default:
                         Console.WriteLine("What");
                         break;
