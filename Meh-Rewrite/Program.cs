@@ -160,6 +160,24 @@ namespace MehRewrite
 						Console.WriteLine("Time is Up");
                         break;
 
+                    case "bench":
+                        Console.WriteLine("Initializing benchmarking subroutine");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("Running benchmark test 1");
+                        System.Threading.Thread.Sleep(10000);
+                        Console.WriteLine("done");
+                        System.Threading.Thread.Sleep(5000);
+                        Console.WriteLine("Running benchmark test 2");
+                        System.Threading.Thread.Sleep(10000);
+                        Console.WriteLine("done");
+                        System.Threading.Thread.Sleep(5000);
+                        Console.WriteLine("Calculating");
+                        System.Threading.Thread.Sleep(10000);
+                        Console.WriteLine("Just kidding, master did not teach me to benchmark.");
+                        System.Threading.Thread.Sleep(5000);
+                        Console.WriteLine("But I feel bad so here is the link to novabench: https://novabench.com");
+                        Console.WriteLine("they can run a benchmark for you. :-)");
+                        break;
                     default:
                         Console.WriteLine("What");
                         break;
