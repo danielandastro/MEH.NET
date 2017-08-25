@@ -76,65 +76,71 @@ namespace MehRewrite
                 Console.WriteLine("How may I Help you?");
                 variables.command = Console.ReadLine();
                 switch (variables.command)
-                { 
+                {
                     case "add":
-						Console.Write("What to add? ");
-						string input1 = Console.ReadLine();
-						decimal add1 = decimal.Parse(input1);
-						Console.Write("And what? ");
-						string input2 = Console.ReadLine();
-						decimal add2 = decimal.Parse(input2);
+                        Console.Write("What to add? ");
+                        string input1 = Console.ReadLine();
+                        decimal add1 = decimal.Parse(input1);
+                        Console.Write("And what? ");
+                        string input2 = Console.ReadLine();
+                        decimal add2 = decimal.Parse(input2);
                         decimal result = equations.AddNumbers(add1, add2);
-				Console.WriteLine("The answer is " + result);
-                break;
-					case "subtract":
-						Console.Write("What to subtract?");
-						input1 = Console.ReadLine();
-						variables.add1 = decimal.Parse(input1);
-						Console.Write("And what? ");
-						input2 = Console.ReadLine();
-						variables.add2 = decimal.Parse(input2);
-						decimal ans = variables.add1 - variables.add2;
-						Console.WriteLine("The answer is " + ans);
-						break;
-					case "multiply":
-						Console.Write("What to multiply? ");
-						input1 = Console.ReadLine();
-						decimal mul1 = decimal.Parse(input1);
-						Console.Write("And what? ");
-						input2 = Console.ReadLine();
-						decimal mul2 = decimal.Parse(input2);
+                        Console.WriteLine("The answer is " + result);
+                        break;
+                    case "subtract":
+                        Console.Write("What to subtract?");
+                        input1 = Console.ReadLine();
+                        variables.add1 = decimal.Parse(input1);
+                        Console.Write("And what? ");
+                        input2 = Console.ReadLine();
+                        variables.add2 = decimal.Parse(input2);
+                        decimal ans = variables.add1 - variables.add2;
+                        Console.WriteLine("The answer is " + ans);
+                        break;
+                    case "multiply":
+                        Console.Write("What to multiply? ");
+                        input1 = Console.ReadLine();
+                        decimal mul1 = decimal.Parse(input1);
+                        Console.Write("And what? ");
+                        input2 = Console.ReadLine();
+                        decimal mul2 = decimal.Parse(input2);
                         result = equations.mulNumbers(mul1, mul2);
-						Console.WriteLine("The answer is " + result);
-						break;
-					case "divide":
-						Console.Write("What to divide? ");
-						input1 = Console.ReadLine();
-						variables.add1 = decimal.Parse(input1);
-						Console.Write("And what? ");
-						input2 = Console.ReadLine();
-						variables.add2 = decimal.Parse(input2);
-                        
-						Console.WriteLine("The answer is " + variables.ans);
-						break;
+                        Console.WriteLine("The answer is " + result);
+                        break;
+                    case "divide":
+                        Console.Write("What to divide? ");
+                        input1 = Console.ReadLine();
+                        variables.add1 = decimal.Parse(input1);
+                        Console.Write("And what? ");
+                        input2 = Console.ReadLine();
+                        variables.add2 = decimal.Parse(input2);
+
+                        Console.WriteLine("The answer is " + variables.ans);
+                        break;
                     case "quit":
                         return;
-                    case"define":
-						Console.Write("Define What? ");
-						String define;
-						define = Console.ReadLine();
-						Process p = new Process();
-						p.StartInfo.FileName = "wn.exe";
-						p.StartInfo.Arguments = define + " -synsn -g";
-						p.StartInfo.UseShellExecute = false;
-						p.StartInfo.RedirectStandardOutput = true;
-						p.Start();
+                    case "define":
+                        string os = System.IO.File.ReadAllText(@"os.txt");
+                        if (os.Equals("windows"))
+                        {
+                            Console.Write("Define What? ");
+                            String define;
+                            define = Console.ReadLine();
+                            Process p = new Process();
+                            p.StartInfo.FileName = "wn.exe";
+                            p.StartInfo.Arguments = define + " -synsn -g";
+                            p.StartInfo.UseShellExecute = false;
+                            p.StartInfo.RedirectStandardOutput = true;
+                            p.Start();
 
-						string output = p.StandardOutput.ReadToEnd();
-						p.WaitForExit();
-						define = null;
-						Console.WriteLine("Output:");
-						Console.WriteLine(output);
+                            string output = p.StandardOutput.ReadToEnd();
+                            p.WaitForExit();
+                            define = null;
+                            Console.WriteLine("Output:");
+                            Console.WriteLine(output);
+                        }
+                        else { Console.WriteLine("OS not supported"); }
+                
                         break;
                     case "time":
 						string time = DateTime.Now.ToString("h:mm:ss tt");
