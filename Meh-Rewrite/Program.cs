@@ -184,7 +184,9 @@ namespace MehRewrite
                                 break;
                         }
                         break;
-                    
+                    case "plugins help":
+                        System.Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name(normal name not the list name), and then type in your commands")
+                        break;
                     default:
                         Console.WriteLine("What");
                         break;
