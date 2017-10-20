@@ -17,6 +17,7 @@ namespace MehRewrite
             string plugins = System.IO.File.ReadAllText(@"plugins/list.txt");
             string extmath = System.IO.File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
             string extcommand = System.IO.File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
+            String installed = System.IO.File.ReadAllText(@"plugins/installedlist.txt");
             switch (variables.secure)
             {
                 case "yes":
@@ -185,8 +186,30 @@ namespace MehRewrite
                         }
                         break;
                     case "plugins help":
-                        System.Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name(normal name not the list name), and then type in your commands")
+                        Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name, and then type in your commands");
                         break;
+                        case "plugin":
+                        string name = Console.ReadLine();
+                        int present = installed.IndexOf(name, StringComparison.Ordinal);
+                        switch (present){
+                            case -1:
+                                Console.WriteLine("Plugin is not present or not listed");
+
+                                break;
+                                default:
+                                switch (name){
+                                    case "extended math":
+                                        extendedmath.main();
+                                        break;
+
+                                        case "extended commands":
+                                        Console.WriteLine("Coming soon");
+                                        break;
+                                }
+                                break;
+                        }
+
+						break;
                     default:
                         Console.WriteLine("What");
                         break;
