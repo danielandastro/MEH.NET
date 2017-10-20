@@ -13,7 +13,10 @@ namespace MehRewrite
             Console.WriteLine("Startup Variables Declared");
             Console.Write("Enter Secure Mode? ");
             variables.secure = Console.ReadLine();
-
+            string os = System.IO.File.ReadAllText(@"os.txt");
+            string plugins = System.IO.File.ReadAllText(@"plugins/list.txt");
+            string extmath = System.IO.File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
+            string extcommand = System.IO.File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
             switch (variables.secure)
             {
                 case "yes":
@@ -92,7 +95,7 @@ namespace MehRewrite
                     case "quit":
                         return;
                     case "define":
-                        string os = System.IO.File.ReadAllText(@"os.txt");
+                        
                         if (os.Equals("windows"))
                         {
                             Console.Write("Define What? ");
@@ -161,6 +164,27 @@ namespace MehRewrite
 
                         case"nuke it":
                         return;
+                    case "list plugins":
+                        Console.Write("List of plugins: ");
+                        Console.WriteLine(plugins);
+                        break;
+                    case "describe":
+                        Console.Write("Plugin name: ");
+                        string pluginname = Console.ReadLine();
+                        switch (pluginname){
+                            case "extended math":
+                                Console.WriteLine(extmath);
+                                break;
+
+                                case "extended commands":
+                                Console.WriteLine(extcommand);
+                                break;
+                            default:
+                                Console.WriteLine("Unrecognised plugin, update from github to get latest plugins");
+                                break;
+                        }
+                        break;
+                    
                     default:
                         Console.WriteLine("What");
                         break;
