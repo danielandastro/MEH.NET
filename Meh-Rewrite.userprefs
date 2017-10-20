@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{BD98746B-44EF-4E5B-BA01-0C46390A42D6}|Default">
   <MonoDevelop.Ide.ItemProperties.Meh-Rewrite PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Meh-Rewrite/extendedmath.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Meh-Rewrite/Program.cs">
     <Files>
-      <File FileName="Meh-Rewrite/Program.cs" Line="213" Column="25" />
+      <File FileName="Meh-Rewrite/Program.cs" Line="17" Column="1" />
       <File FileName="Meh-Rewrite/variables.cs" Line="12" Column="1" />
       <File FileName="Meh-Rewrite/equations.cs" Line="20" Column="44" />
-      <File FileName="Meh-Rewrite/extendedmath.cs" Line="6" Column="27" />
+      <File FileName="Meh-Rewrite/extendedmath.cs" Line="7" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

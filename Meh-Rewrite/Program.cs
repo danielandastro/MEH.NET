@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace MehRewrite
 {
@@ -10,14 +11,27 @@ namespace MehRewrite
             Console.WriteLine("MEH System Version 1.0");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
+            String dlls = "None";
             Console.WriteLine("Startup Variables Declared");
+           //dont touch this code, i have only commented cause its not done yet
+            Console.WriteLine("Searching for dlls");
+            foreach (var file in Directory.GetFiles(@"dlls", "*.dll")) 
+            {
+                
+                dlls = dlls + file;
+                Console.WriteLine(file); }
+            int present = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
+            if (present == -1) { Console.WriteLine("tinyMath.dll not found, press a key to break");Console.ReadKey(); 
+                return; }
+            else {Console.WriteLine("All DLLs accounted for");}
+
             Console.Write("Enter Secure Mode? ");
             variables.secure = Console.ReadLine();
-            string os = System.IO.File.ReadAllText(@"os.txt");
-            string plugins = System.IO.File.ReadAllText(@"plugins/list.txt");
-            string extmath = System.IO.File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
-            string extcommand = System.IO.File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
-            String installed = System.IO.File.ReadAllText(@"plugins/installedlist.txt");
+            string os = File.ReadAllText(@"os.txt");
+            string plugins = File.ReadAllText(@"plugins/list.txt");
+            string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
+            string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
+            String installed = File.ReadAllText(@"plugins/installedlist.txt");
             switch (variables.secure)
             {
                 case "yes":
@@ -167,7 +181,7 @@ namespace MehRewrite
                         return;
                     case "list plugins":
                         Console.Write("List of plugins: ");
-                        Console.WriteLine(plugins);
+                       // Console.WriteLine(plugins);
                         break;
                     case "describe":
                         Console.Write("Plugin name: ");
@@ -190,8 +204,8 @@ namespace MehRewrite
                         break;
                         case "plugin":
                         string name = Console.ReadLine();
-                        int present = installed.IndexOf(name, StringComparison.Ordinal);
-                        switch (present){
+                        int exist = installed.IndexOf(name, StringComparison.Ordinal);
+                        switch (exist){
                             case -1:
                                 Console.WriteLine("Plugin is not present or not listed");
 
