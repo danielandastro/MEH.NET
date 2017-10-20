@@ -1,0 +1,1 @@
+A simple plugin that provides additional mathematical commands using the tinyMath c# library. Usage commands: square, cube, raiseto, factorial
