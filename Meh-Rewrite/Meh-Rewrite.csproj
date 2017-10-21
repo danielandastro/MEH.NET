@@ -30,6 +30,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Define">
+      <HintPath>bin\Debug\dlls\Define.dll</HintPath>
+    </Reference>
+    <Reference Include="tinyMath">
+      <HintPath>bin\Debug\dlls\tinyMath.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

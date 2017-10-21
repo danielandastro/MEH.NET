@@ -3,3 +3,5 @@
 /Users/danielshroff/Projects/Meh-Rewrite/Meh-Rewrite/obj/x86/Debug/Meh-Rewrite.csproj.CoreCompileInputs.cache
 /Users/danielshroff/Projects/Meh-Rewrite/Meh-Rewrite/obj/x86/Debug/Meh-Rewrite.exe
 /Users/danielshroff/Projects/Meh-Rewrite/Meh-Rewrite/obj/x86/Debug/Meh-Rewrite.pdb
+/Users/danielshroff/Projects/Meh-Rewrite/Meh-Rewrite/bin/Debug/Define.dll
+/Users/danielshroff/Projects/Meh-Rewrite/Meh-Rewrite/bin/Debug/tinyMath.dll

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-
+using Define;
 namespace MehRewrite
 {
     class MainClass
@@ -13,15 +13,21 @@ namespace MehRewrite
             Console.WriteLine("Declaring Startup Variables");
             String dlls = "None";
             Console.WriteLine("Startup Variables Declared");
-           //dont touch this code, i have only commented cause its not done yet
             Console.WriteLine("Searching for dlls");
             foreach (var file in Directory.GetFiles(@"dlls", "*.dll")) 
             {
                 
                 dlls = dlls + file;
                 Console.WriteLine(file); }
-            int present = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
-            if (present == -1) { Console.WriteLine("tinyMath.dll not found, press a key to break");Console.ReadKey(); 
+            int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
+            int presentDefine = dlls.IndexOf("Define.dll", StringComparison.Ordinal);
+            if (presentDefine == -1)
+            {
+                Console.WriteLine("Define.dll not found, press a key to break"); Console.ReadKey();
+                return;
+            }
+            else {}
+            if (presentMath == -1) { Console.WriteLine("tinyMath.dll not found, press a key to break");Console.ReadKey(); 
                 return; }
             else {Console.WriteLine("All DLLs accounted for");}
 
@@ -116,18 +122,8 @@ namespace MehRewrite
                             Console.Write("Define What? ");
                             String define;
                             define = Console.ReadLine();
-                            Process p = new Process();
-                            p.StartInfo.FileName = "wn.exe";
-                            p.StartInfo.Arguments = define + " -synsn -g";
-                            p.StartInfo.UseShellExecute = false;
-                            p.StartInfo.RedirectStandardOutput = true;
-                            p.Start();
-
-                            string output = p.StandardOutput.ReadToEnd();
-                            p.WaitForExit();
-                            define = null;
-                            Console.WriteLine("Output:");
-                            Console.WriteLine(output);
+                            var defineword = new Definition().WordDefine(define);
+                            Console.WriteLine(defineword);
                         }
                         else { Console.WriteLine("OS not supported"); }
                 
