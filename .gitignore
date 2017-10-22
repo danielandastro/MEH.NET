@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+#OS Crap
+*ds_store
+*DS_STORE
