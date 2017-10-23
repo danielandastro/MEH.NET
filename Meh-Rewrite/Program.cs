@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using Define;
+using mathLibrary;
 namespace MehRewrite
 {
     class MainClass
@@ -12,13 +13,18 @@ namespace MehRewrite
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
             String dlls = "None";
+            String command, user, pass, secure = null;
+            Boolean secure_mode = true;
+
+            math math = new math();
             Console.WriteLine("Startup Variables Declared");
             Console.WriteLine("Searching for dlls");
-            foreach (var file in Directory.GetFiles(@"dlls", "*.dll")) 
+            foreach (var file in Directory.GetFiles(@"dlls", "*.dll"))
             {
-                
+
                 dlls = dlls + file;
-                Console.WriteLine(file); }
+                Console.WriteLine(file);
+            }
             int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
             int presentDefine = dlls.IndexOf("Define.dll", StringComparison.Ordinal);
             if (presentDefine == -1)
@@ -26,38 +32,41 @@ namespace MehRewrite
                 Console.WriteLine("Define.dll not found, press a key to break"); Console.ReadKey();
                 return;
             }
-            else {}
-            if (presentMath == -1) { Console.WriteLine("tinyMath.dll not found, press a key to break");Console.ReadKey(); 
-                return; }
-            else {Console.WriteLine("All DLLs accounted for");}
+            else { }
+            if (presentMath == -1)
+            {
+                Console.WriteLine("tinyMath.dll not found, press a key to break"); Console.ReadKey();
+                return;
+            }
+            else { Console.WriteLine("All DLLs accounted for"); }
 
             Console.Write("Enter Secure Mode? ");
-            variables.secure = Console.ReadLine();
+            secure = Console.ReadLine();
             string os = File.ReadAllText(@"os.txt");
             string plugins = File.ReadAllText(@"plugins/list.txt");
             string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
             string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
             String installed = File.ReadAllText(@"plugins/installedlist.txt");
-            switch (variables.secure)
+            switch (secure)
             {
                 case "yes":
-                    variables.secure_mode = true;
+                    secure_mode = true;
                     break;
 
                 case "y":
-                    variables.secure_mode = true;
+                    secure_mode = true;
                     break;
                 case "true":
-                    variables.secure_mode = true;
+                    secure_mode = true;
                     break;
                 case "no":
-                    variables.secure_mode = false;
+                    secure_mode = false;
                     break;
                 case "n":
-                    variables.secure_mode = false;
+                    secure_mode = false;
                     break;
                 case "false":
-                    variables.secure_mode = false;
+                    secure_mode = false;
                     break;
 
                 default:
@@ -65,17 +74,17 @@ namespace MehRewrite
                     Console.ReadKey();
                     return;
             }
-            if (variables.secure_mode == true)
+            if (secure_mode == true)
             {
                 Console.WriteLine("Loading...");
                 Console.WriteLine("Enter User Name: ");
-                variables.user = Console.ReadLine();
+                user = Console.ReadLine();
                 Console.WriteLine("Enter Password: ");
-                variables.pass = Console.ReadLine();
-                if (string.Equals(variables.user, "admin") & string.Equals(variables.pass, "admin"))
+                pass = Console.ReadLine();
+                if (string.Equals(user, "admin") & string.Equals(pass, "admin"))
                 {
                     Console.WriteLine("Confirming credentials, please wait");
-                    Console.WriteLine("Credentials confirmed, hello, " + variables.user);
+                    Console.WriteLine("Credentials confirmed, hello, " + user);
                 }
                 else
                 {
@@ -84,39 +93,43 @@ namespace MehRewrite
                     return;
                 }
             }
-            else if (variables.secure_mode == false)
+            else if (secure_mode == false)
             {
                 Console.WriteLine("Loading...");
                 Console.WriteLine("Enter User Name: ");
-                variables.user = Console.ReadLine();
+                user = Console.ReadLine();
 
 
 
                 Console.WriteLine("Confirming credentials, please wait");
-                Console.WriteLine("Credentials confirmed, hello, " + variables.user);
+                Console.WriteLine("Credentials confirmed, hello, " + user);
             }
             while (true)
             {
                 Console.WriteLine("How may I Help you?");
-                variables.command = Console.ReadLine();
-                switch (variables.command)
+                command = Console.ReadLine();
+                switch (command)
                 {
                     case "add":
-                        equations.AddNumbers();
+                        double ans = math.AddNumbers();
+                        Console.WriteLine("Answer is "+ans);
                         break;
                     case "subtract":
-                        equations.SubNumbers();
+                        ans = math.SubNumbers();
+                        Console.WriteLine("Answer is " + ans);
                         break;
                     case "multiply":
-                        equations.mulNumbers();
+                       ans = math.MulNumbers();
+                        Console.WriteLine("Answer is " + ans);
                         break;
                     case "divide":
-                        equations.DivNumbers();
+                        ans = math.DivNumbers();
+                        Console.WriteLine("Answer is " + ans);
                         break;
                     case "quit":
                         return;
                     case "define":
-                        
+
                         if (os.Equals("windows"))
                         {
                             Console.Write("Define What? ");
@@ -126,30 +139,30 @@ namespace MehRewrite
                             Console.WriteLine(defineword);
                         }
                         else { Console.WriteLine("OS not supported"); }
-                
+
                         break;
                     case "time":
-						string time = DateTime.Now.ToString("h:mm:ss tt");
-						Console.WriteLine(time);
+                        string time = DateTime.Now.ToString("h:mm:ss tt");
+                        Console.WriteLine(time);
                         break;
                     case "what is the time":
-						time = DateTime.Now.ToString("h:mm:ss tt");
-						Console.WriteLine(time);
+                        time = DateTime.Now.ToString("h:mm:ss tt");
+                        Console.WriteLine(time);
                         break;
-                        case "timer":
-						int min, sec, totalsec, mintosec, milli;
-						string strmin, strsec;
-						Console.Write("Minutes: ");
-						strmin = Console.ReadLine();
-						Console.Write("Seconds: ");
-						strsec = Console.ReadLine();
-						sec = Int32.Parse(strsec);
-						min = Int32.Parse(strmin);
-						mintosec = min * 60;
-						totalsec = mintosec + sec;
-						milli = totalsec * 1000;
-						System.Threading.Thread.Sleep(milli);
-						Console.WriteLine("Time is Up");
+                    case "timer":
+                        int min, sec, totalsec, mintosec, milli;
+                        string strmin, strsec;
+                        Console.Write("Minutes: ");
+                        strmin = Console.ReadLine();
+                        Console.Write("Seconds: ");
+                        strsec = Console.ReadLine();
+                        sec = Int32.Parse(strsec);
+                        min = Int32.Parse(strmin);
+                        mintosec = min * 60;
+                        totalsec = mintosec + sec;
+                        milli = totalsec * 1000;
+                        System.Threading.Thread.Sleep(milli);
+                        Console.WriteLine("Time is Up");
                         break;
 
                     case "bench":
@@ -170,24 +183,25 @@ namespace MehRewrite
                         Console.WriteLine("But I feel bad so here is the link to novabench: https://novabench.com");
                         Console.WriteLine("they can run a benchmark for you. :-)");
                         break;
-                    case"exit":
+                    case "exit":
                         return;
 
-                        case"nuke it":
+                    case "nuke it":
                         return;
                     case "list plugins":
                         Console.Write("List of plugins: ");
-                       // Console.WriteLine(plugins);
+                        // Console.WriteLine(plugins);
                         break;
                     case "describe":
                         Console.Write("Plugin name: ");
                         string pluginname = Console.ReadLine();
-                        switch (pluginname){
+                        switch (pluginname)
+                        {
                             case "extended math":
                                 Console.WriteLine(extmath);
                                 break;
 
-                                case "extended commands":
+                            case "extended commands":
                                 Console.WriteLine(extcommand);
                                 break;
                             default:
@@ -195,7 +209,7 @@ namespace MehRewrite
                                 break;
                         }
                         break;
-                    case "plugins help":
+                    /*case "plugins help":
                         Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name, and then type in your commands");
                         break;
                         case "plugin":
@@ -206,20 +220,16 @@ namespace MehRewrite
                                 Console.WriteLine("Plugin is not present or not listed");
 
                                 break;
-                                default:
+
                                 switch (name){
                                     case "extended math":
-                                        extendedmath.main();
+                                        Console.WriteLine("Coming soon")
                                         break;
 
                                         case "extended commands":
                                         Console.WriteLine("Coming soon");
-                                        break;
-                                }
-                                break;
-                        }
+                                        break;*/
 
-						break;
                     default:
                         Console.WriteLine("What");
                         break;
