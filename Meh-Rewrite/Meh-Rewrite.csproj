@@ -39,6 +39,9 @@
     <Reference Include="mathLibrary">
       <HintPath>bin\Debug\dlls\mathLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="extendedmath">
+      <HintPath>..\..\extendedmath\extendedmath\bin\Debug\extendedmath.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
