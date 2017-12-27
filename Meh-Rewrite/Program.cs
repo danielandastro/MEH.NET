@@ -25,25 +25,26 @@ namespace MehRewrite
                 dlls = dlls + file;
                 Console.WriteLine(file);
             }
-            int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
+            //int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
             int presentDefine = dlls.IndexOf("Define.dll", StringComparison.Ordinal);
             if (presentDefine == -1)
             {
                 Console.WriteLine("Define.dll not found, press a key to break"); Console.ReadKey();
                 return;
             }
-            else { }
+            /*else { }
             if (presentMath == -1)
             {
                 Console.WriteLine("tinyMath.dll not found, press a key to break"); Console.ReadKey();
                 return;
-            }
+            }*/
             else { Console.WriteLine("All DLLs accounted for"); }
 
             Console.Write("Enter Secure Mode? ");
             secure = Console.ReadLine();
-            string os = File.ReadAllText(@"os.txt");
-            string plugins = File.ReadAllText(@"plugins/list.txt");
+            //string os = File.ReadAllText(@"os.txt");
+            string os = "linux";
+            //string plugins = File.ReadAllText(@"plugins/list.txt");
             //string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
             //string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
             //String installed = File.ReadAllText(@"plugins/installedlist.txt");

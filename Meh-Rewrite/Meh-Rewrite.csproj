@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,13 +31,13 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Define">
-      <HintPath>bin\Debug\dlls\Define.dll</HintPath>
+      <HintPath>..\Define.dll</HintPath>
     </Reference>
     <Reference Include="tinyMath">
       <HintPath>bin\Debug\dlls\tinyMath.dll</HintPath>
     </Reference>
     <Reference Include="mathLibrary">
-      <HintPath>bin\Debug\dlls\mathLibrary.dll</HintPath>
+      <HintPath>..\mathLibrary.dll</HintPath>
     </Reference>
     <Reference Include="extendedmath">
       <HintPath>..\..\extendedmath\extendedmath\bin\Debug\extendedmath.dll</HintPath>
