@@ -231,9 +231,12 @@ namespace MehRewrite
                                         Console.WriteLine("Coming soon");
                                         break;*/
                     //case "square": Console.WriteLine("Using Extended Math");
-                      //  Console.Write("Square what ");
+                    //  Console.Write("Square what ");
 
-                    
+                    case "Sample":
+
+                        Console.WriteLine("Sample");
+                        break;
                     
                     default:
                         Console.WriteLine("What");
