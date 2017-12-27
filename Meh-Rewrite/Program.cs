@@ -44,9 +44,9 @@ namespace MehRewrite
             secure = Console.ReadLine();
             string os = File.ReadAllText(@"os.txt");
             string plugins = File.ReadAllText(@"plugins/list.txt");
-            string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
-            string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
-            String installed = File.ReadAllText(@"plugins/installedlist.txt");
+            //string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
+            //string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
+            //String installed = File.ReadAllText(@"plugins/installedlist.txt");
             switch (secure)
             {
                 case "yes":
@@ -192,7 +192,7 @@ namespace MehRewrite
                         Console.Write("List of plugins: ");
                         // Console.WriteLine(plugins);
                         break;
-                    case "describe":
+                    /*case "describe":
                         Console.Write("Plugin name: ");
                         string pluginname = Console.ReadLine();
                         switch (pluginname)
@@ -209,7 +209,7 @@ namespace MehRewrite
                                 break;
                         }
                         break;
-                    /*case "plugins help":
+                    case "plugins help":
                         Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name, and then type in your commands");
                         break;
                         case "plugin":
@@ -229,7 +229,11 @@ namespace MehRewrite
                                         case "extended commands":
                                         Console.WriteLine("Coming soon");
                                         break;*/
+                    //case "square": Console.WriteLine("Using Extended Math");
+                      //  Console.Write("Square what ");
 
+                    
+                    
                     default:
                         Console.WriteLine("What");
                         break;
