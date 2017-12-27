@@ -9,7 +9,7 @@ namespace MehRewrite
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("MEH System Version 1.0");//Version to be changed
+            Console.WriteLine("MEH System Version 2.3");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
             String dlls = "None";
@@ -289,15 +289,32 @@ namespace MehRewrite
                         }
                         else
                         {
-                            
-                            Console.WriteLine("nooo...")
+
+                            Console.WriteLine("i cannot be stopped");
+
                             
                             return;
 
-
+                            
                         }
 
                         break;
+
+                    case "area":
+                        Console.WriteLine("Square= Side(squared)");
+                                                               
+                                                                                                          
+                        Console.WriteLine("Rectangle=Lenght*breath");
+                        Console.WriteLine("Triangle=Base*Perpendicular height/2");
+                        Console.WriteLine("Trapezium=(side a + side b)*height/2"
+                                          
+                            );
+                        Console.WriteLine("Parallelogram=Base*Perpendicular Height");
+                        Console.WriteLine("kite=");
+
+                      
+                        break;
+
 
 
 
