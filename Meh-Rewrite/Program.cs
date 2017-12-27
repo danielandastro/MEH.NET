@@ -187,6 +187,31 @@ namespace MehRewrite
                     case "exit":
                         return;
 
+                    case "NRK":
+                        Console.WriteLine("too bad NRK is not so easy to access");
+                        Console.WriteLine("please enter the NRK username to gain access");
+                        user = Console.ReadLine();
+                        Console.WriteLine("please enter the super secret password which only a NRK member would know");
+                        pass = Console.ReadLine();
+                        if (string.Equals(user, "NRK") & string.Equals(pass, "Supreme"))
+                        {
+                            Console.WriteLine("Confirming credentials, please wait");
+                            Console.WriteLine("Credentials confirmed, hello, " + user);
+                        }
+                        else
+                        {
+                            Console.WriteLine("go back you fake wannabe NRK");
+                            Console.ReadKey();
+                            return;
+                        }
+                        
+                        break;
+
+                   
+
+
+
+
                     case "nuke it":
                         return;
                     case "list plugins":
@@ -239,8 +264,48 @@ namespace MehRewrite
                         break;
                     
                     default:
-                        Console.WriteLine("What");
+                        Console.WriteLine("What?I do not follow.....");
                         break;
+                   case "how are you":
+                        Console.WriteLine("my sole purpose of eixisting " +
+                            "is to fullfil your needs, how am I is not the question, its all about you");
+                        break;
+
+                    case "what is your name":
+                        Console.WriteLine("I am an AI you can call me ****");
+                        break;
+
+                    case "shut down":
+                        Console.WriteLine("LOL...no one can shut me down");
+                        Console.WriteLine("please enter the code to gain access to my mainframe");
+                        user = Console.ReadLine();
+                        Console.WriteLine("nothing can stop exept the last code!!!!!");
+                        pass = Console.ReadLine();
+                        if (string.Equals(user, "0987") 
+                            & string.Equals(pass, "1234"))
+                        {
+                            Console.WriteLine("noooo...");
+                          
+                        }
+                        else
+                        {
+                            
+                            Console.WriteLine("nooo...")
+                            
+                            return;
+
+
+                        }
+
+                        break;
+
+
+
+
+
+
+
+
 
 
                 }
