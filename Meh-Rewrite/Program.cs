@@ -9,7 +9,7 @@ namespace MehRewrite
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("MEH System Version 1.0");
+            Console.WriteLine("MEH System Version 1.0");//Version to be changed
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
             String dlls = "None";
