@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using Define;
 using mathLibrary;
+using System.Windows.Forms;
 namespace MehRewrite
 {
     class MainClass
@@ -334,6 +335,11 @@ namespace MehRewrite
                         System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
                                                                       
                       break;
+
+                    case "battery level":
+                        var BatteryLifePercent = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
+                        Console.WriteLine(BatteryLifePercent);
+                        break;
 
 
 

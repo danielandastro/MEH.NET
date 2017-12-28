@@ -36,6 +36,7 @@
     <Reference Include="mathLibrary">
       <HintPath>..\mathLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
