@@ -335,7 +335,11 @@ namespace MehRewrite
                                                                       
                       break;
 
+                    case "periodic table":
+                        System.Diagnostics.Process.Start("https://www.ptable.com/");
 
+
+                        break;
 
 
 
