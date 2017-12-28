@@ -26,7 +26,7 @@ namespace MehRewrite
                 Console.WriteLine(file);
             }
             //int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
-            int presentDefine = dlls.IndexOf("Define.dll", StringComparison.Ordinal);
+            int presentDefine = 1;
             if (presentDefine == -1)
             {
                 Console.WriteLine("Define.dll not found, press a key to break"); Console.ReadKey();
