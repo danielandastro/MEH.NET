@@ -285,7 +285,7 @@ namespace MehRewrite
                             & string.Equals(pass, "1234"))
                         {
                             Console.WriteLine("noooo...");
-                            return;
+                            return;//This line makes it exit
                         }
                         else
                         {
