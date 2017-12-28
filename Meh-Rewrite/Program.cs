@@ -320,6 +320,22 @@ namespace MehRewrite
                         break;
 
 
+                    case "open microsoft edge":
+                        System.Diagnostics.Process.Start("microsoft-edge:http://www.google.com");
+                                           
+                      break;
+
+                    case "open NRK entertainment website":
+                        System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
+
+
+                        
+
+
+                       break;
+
+
+
 
 
 
