@@ -3,8 +3,12 @@ using System.Diagnostics;
 using System.IO;
 using Define;
 using mathLibrary;
+
+using System.Windows.Forms;
+
 using WeatherNet;
 using WeatherNet.Clients;
+
 
 namespace MehRewrite
 {
@@ -339,7 +343,22 @@ namespace MehRewrite
                     case "open NRK entertainment website":
                         System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
 
-                       break;
+
+                    case "battery":
+                        var BatteryChargeStatus= SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
+                        var BatteryFullLifetime = SystemInformation.PowerStatus.BatteryFullLifetime.ToString();
+                        var BatteryLifePercent = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
+                        var BatteryLifeRemaining = SystemInformation.PowerStatus.BatteryLifeRemaining.ToString();
+                        var PowerLineStatus = SystemInformation.PowerStatus.PowerLineStatus.ToString();
+                        Console.WriteLine("Percent is " +BatteryLifePercent);
+                        Console.WriteLine("Charge status is " + BatteryChargeStatus);
+                        Console.WriteLine("Full lifetime is " + BatteryFullLifetime);
+                        Console.WriteLine("Remaining lifetime is " + BatteryLifeRemaining);
+                        Console.WriteLine("Powerline status is " + PowerLineStatus);
+                        break;
+
+
+
                     case "weather":
                         var result = CurrentWeather.GetByCityName("Stockholm", "Sweden", "en", "metric");
                         Console.WriteLine(result);
@@ -349,6 +368,7 @@ namespace MehRewrite
                         System.Diagnostics.Process.Start("https://www.ptable.com/");
                         
                         break;
+
 
   
 
