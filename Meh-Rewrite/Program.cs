@@ -332,12 +332,8 @@ namespace MehRewrite
 
                     case "open NRK entertainment website":
                         System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
-
-
-                        
-
-
-                       break;
+                                                                      
+                      break;
 
 
 
