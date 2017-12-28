@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using Define;
@@ -254,14 +254,10 @@ namespace MehRewrite
 
                                         case "extended commands":
                                         Console.WriteLine("Coming soon");
-                                        break;*/
-                    //case "square": Console.WriteLine("Using Extended Math");
-                    //  Console.Write("Square what ");
-
-                    case "Sample":
-
-                        Console.WriteLine("Sample");
-                        break;
+                                        break;
+                    case "square": Console.WriteLine("Using Extended Math"); 
+                      Console.Write("Square what ");*/
+               
                     
                     default:
                         Console.WriteLine("What?I do not follow.....");
