@@ -293,7 +293,7 @@ namespace MehRewrite
                             Console.WriteLine("i cannot be stopped");
 
                             
-                            return;
+
 
                             
                         }
