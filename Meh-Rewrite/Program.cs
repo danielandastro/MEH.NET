@@ -343,7 +343,7 @@ namespace MehRewrite
                     case "open NRK entertainment website":
                         System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
 
-
+                        break;
                     case "battery":
                         var BatteryChargeStatus= SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
                         var BatteryFullLifetime = SystemInformation.PowerStatus.BatteryFullLifetime.ToString();
