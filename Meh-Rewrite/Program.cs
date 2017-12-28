@@ -214,11 +214,11 @@ namespace MehRewrite
 
                     case "nuke it":
                         return;
-                    case "list plugins":
+                    /*case "list plugins":
                         Console.Write("List of plugins: ");
                         // Console.WriteLine(plugins);
                         break;
-                    /*case "describe":
+                    case "describe":
                         Console.Write("Plugin name: ");
                         string pluginname = Console.ReadLine();
                         switch (pluginname)
@@ -267,7 +267,7 @@ namespace MehRewrite
                         Console.WriteLine("What?I do not follow.....");
                         break;
                    case "how are you":
-                        Console.WriteLine("my sole purpose of eixisting " +
+                        Console.WriteLine("my sole purpose of existing " +
                             "is to fullfil your needs, how am I is not the question, its all about you");
                         break;
 
@@ -312,17 +312,14 @@ namespace MehRewrite
                         break;
 
                     case "area":
-                        Console.WriteLine("Square= Side(squared)");
-                                                               
-                                                                                                          
-                        Console.WriteLine("Rectangle=Lenght*breath");
-                        Console.WriteLine("Triangle=Base*Perpendicular height/2");
-                        Console.WriteLine("Trapezium=(side a + side b)*height/2"
-                                          
-                            );
-                        Console.WriteLine("Parallelogram=Base*Perpendicular Height");
-                        Console.WriteLine("kite=");
-
+                        Console.WriteLine("Area");
+                        Console.WriteLine("of square = Side * Side");                                                                                                                      
+                        Console.WriteLine("of rectangle = Length * Breath");
+                        Console.WriteLine("of triangle = Base * Perpendicular height / 2");
+                        Console.WriteLine("of trapezium = (side a + side b) * height / 2");
+                        Console.WriteLine("of parallelogram = Base * Perpendicular Height");
+                        Console.WriteLine("of kite = (Diagonal p) * (Diagonal q) / 2");
+                        Console.WriteLine("51 = Who Knows");
                       
                         break;
 
