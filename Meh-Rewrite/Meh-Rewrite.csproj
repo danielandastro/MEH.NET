@@ -33,14 +33,8 @@
     <Reference Include="Define">
       <HintPath>..\Define.dll</HintPath>
     </Reference>
-    <Reference Include="tinyMath">
-      <HintPath>bin\Debug\dlls\tinyMath.dll</HintPath>
-    </Reference>
     <Reference Include="mathLibrary">
       <HintPath>..\mathLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="extendedmath">
-      <HintPath>..\..\extendedmath\extendedmath\bin\Debug\extendedmath.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
