@@ -3,6 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using Define;
 using mathLibrary;
+using WeatherNet;
+using WeatherNet.Clients;
+
 namespace MehRewrite
 {
     class MainClass
@@ -335,15 +338,19 @@ namespace MehRewrite
 
                     case "open NRK entertainment website":
                         System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
-                                                                      
-                      break;
+
+                       break;
+                    case "weather":
+                        var result = CurrentWeather.GetByCityName("Stockholm", "Sweden", "en", "metric");
+                        Console.WriteLine(result);
+                        break;
 
                     case "periodic table":
                         System.Diagnostics.Process.Start("https://www.ptable.com/");
                         
                         break;
 
-                    
+  
 
 
 
