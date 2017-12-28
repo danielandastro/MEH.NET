@@ -273,6 +273,17 @@ namespace MehRewrite
 
                     case "what is your name":
                         Console.WriteLine("I am an AI you can call me ****");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("A message from the developers:");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("Sorry about that");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("It's just a phase");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("We think");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine("And hope");
+                        System.Threading.Thread.Sleep(1000);
                         break;
 
                     case "shut down":
