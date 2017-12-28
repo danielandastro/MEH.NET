@@ -319,7 +319,7 @@ namespace MehRewrite
                         break;
                     case "open chrome":
                         string page = "https://www.google.com";
-                        Console.Write("Which Page (Use format like https://google.com) or press enter for google");
+                        Console.Write("Which Page (Use format like https://google.com): ");
                         page = Console.ReadLine();
                         Process.Start("chrome", @page);
 
