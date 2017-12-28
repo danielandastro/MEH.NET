@@ -12,19 +12,19 @@ namespace MehRewrite
             Console.WriteLine("MEH System Version 2.3");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
-            String dlls = "None";
+            //String dlls = "None";
             String command, user, pass, secure = null;
             Boolean secure_mode = true;
 
             math math = new math();
             Console.WriteLine("Startup Variables Declared");
             Console.WriteLine("Searching for dlls");
-            foreach (var file in Directory.GetFiles(@"dlls", "*.dll"))
+            /*foreach (var file in Directory.GetFiles(@"dlls", "*.dll"))
             {
 
                 dlls = dlls + file;
                 Console.WriteLine(file);
-            }
+            }*/
             //int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
             int presentDefine = 1;
             if (presentDefine == -1)
@@ -113,14 +113,14 @@ namespace MehRewrite
                 {
                     case "add":
                         double ans = math.AddNumbers();
-                        Console.WriteLine("Answer is "+ans);
+                        Console.WriteLine("Answer is " + ans);
                         break;
                     case "subtract":
                         ans = math.SubNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
                     case "multiply":
-                       ans = math.MulNumbers();
+                        ans = math.MulNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
                     case "divide":
@@ -204,10 +204,10 @@ namespace MehRewrite
                             Console.ReadKey();
                             return;
                         }
-                        
+
                         break;
 
-                   
+
 
 
 
@@ -257,12 +257,12 @@ namespace MehRewrite
                                         break;
                     case "square": Console.WriteLine("Using Extended Math"); 
                       Console.Write("Square what ");*/
-               
-                    
+
+
                     default:
                         Console.WriteLine("What?I do not follow.....");
                         break;
-                   case "how are you":
+                    case "how are you":
                         Console.WriteLine("my sole purpose of existing " +
                             "is to fullfil your needs, how am I is not the question, its all about you");
                         break;
@@ -288,7 +288,7 @@ namespace MehRewrite
                         user = Console.ReadLine();
                         Console.WriteLine("nothing can stop exept the last code!!!!!");
                         pass = Console.ReadLine();
-                        if (string.Equals(user, "0987") 
+                        if (string.Equals(user, "0987")
                             & string.Equals(pass, "1234"))
                         {
                             Console.WriteLine("noooo...");
@@ -299,26 +299,31 @@ namespace MehRewrite
 
                             Console.WriteLine("i cannot be stopped");
 
-                            
 
 
-                            
+
+
                         }
 
                         break;
 
                     case "area":
                         Console.WriteLine("Area");
-                        Console.WriteLine("of square = Side * Side");                                                                                                                      
+                        Console.WriteLine("of square = Side * Side");
                         Console.WriteLine("of rectangle = Length * Breath");
                         Console.WriteLine("of triangle = Base * Perpendicular height / 2");
                         Console.WriteLine("of trapezium = (side a + side b) * height / 2");
                         Console.WriteLine("of parallelogram = Base * Perpendicular Height");
                         Console.WriteLine("of kite = (Diagonal p) * (Diagonal q) / 2");
                         Console.WriteLine("51 = Who Knows");
-                      
                         break;
+                    case "open chrome":
+                        string page = "https://www.google.com";
+                        Console.Write("Which Page (Use format like https://google.com) or press enter for google");
+                        page = Console.ReadLine();
+                        Process.Start("chrome", @page);
 
+                        break;
 
 
 
