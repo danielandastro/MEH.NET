@@ -336,9 +336,17 @@ namespace MehRewrite
                                                                       
                       break;
 
-                    case "battery level":
+                    case "battery":
+                        var BatteryChargeStatus= SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
+                        var BatteryFullLifetime = SystemInformation.PowerStatus.BatteryFullLifetime.ToString();
                         var BatteryLifePercent = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
-                        Console.WriteLine(BatteryLifePercent);
+                        var BatteryLifeRemaining = SystemInformation.PowerStatus.BatteryLifeRemaining.ToString();
+                        var PowerLineStatus = SystemInformation.PowerStatus.PowerLineStatus.ToString();
+                        Console.WriteLine("Percent is " +BatteryLifePercent);
+                        Console.WriteLine("Charge status is " + BatteryChargeStatus);
+                        Console.WriteLine("Full lifetime is " + BatteryFullLifetime);
+                        Console.WriteLine("Remaining lifetime is " + BatteryLifeRemaining);
+                        Console.WriteLine("Powerline status is " + PowerLineStatus);
                         break;
 
 
