@@ -16,6 +16,7 @@ namespace MehRewrite
     {
         public static void Main(string[] args)
         {
+
             Console.WriteLine("MEH System Version 2.3");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
@@ -24,6 +25,7 @@ namespace MehRewrite
             Boolean secure_mode = true;
 
             math math = new math();
+            Boolean shutDownFlag = true;
             Console.WriteLine("Startup Variables Declared");
             Console.WriteLine("Searching for dlls");
             /*foreach (var file in Directory.GetFiles(@"dlls", "*.dll"))
@@ -291,27 +293,30 @@ namespace MehRewrite
 
                     case "shut down":
                         Console.WriteLine("LOL...no one can shut me down");
-                        Console.WriteLine("please enter the code to gain access to my mainframe");
-                        user = Console.ReadLine();
-                        Console.WriteLine("nothing can stop exept the last code!!!!!");
-                        Console.WriteLine("message from the dev team");
-                        System.Threading.Thread.Sleep(1000);
-                        Console.WriteLine("it is the most easy four character password....1..2..");
-                        pass = Console.ReadLine();
-                        if (string.Equals(user, "0987")
-                            & string.Equals(pass, "1234"))
-                        {
-                            Console.WriteLine("noooo...");
-                            return;//This line makes it exit
-                        }
-                        else
-                        {
+                        if (shutDownFlag == true){
+                            Console.WriteLine("please enter the code to gain access to my mainframe");
+                            user = Console.ReadLine();
+                            Console.WriteLine("nothing can stop exept the last code!!!!!");
+                            Console.WriteLine("message from the dev team");
+                            System.Threading.Thread.Sleep(1000);
+                            Console.WriteLine("it is the most easy four character password....1..2..");
+                            pass = Console.ReadLine();
+                            if (string.Equals(user, "0987")
+                                & string.Equals(pass, "1234"))
+                            {
+                                Console.WriteLine("noooo...");
+                                return;//This line makes it exit
+                            }
+                            else
+                            {
 
-                            Console.WriteLine("i cannot be stopped");
+                                Console.WriteLine("i cannot be stopped");
+                                shutDownFlag = false;
 
 
 
 
+                            }
 
                         }
 
