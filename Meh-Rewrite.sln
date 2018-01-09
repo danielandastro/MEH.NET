@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meh-Rewrite", "Meh-Rewrite\Meh-Rewrite.csproj", "{BD98746B-44EF-4E5B-BA01-0C46390A42D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meh_Library", "Meh_Library\Meh_Library.csproj", "{B3D4B841-6CFE-4DA5-A8D9-EBFEB06DB017}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Debug|x86.Build.0 = Debug|x86
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Release|x86.ActiveCfg = Release|x86
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Release|x86.Build.0 = Release|x86
+		{B3D4B841-6CFE-4DA5-A8D9-EBFEB06DB017}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3D4B841-6CFE-4DA5-A8D9-EBFEB06DB017}.Debug|x86.Build.0 = Debug|Any CPU
+		{B3D4B841-6CFE-4DA5-A8D9-EBFEB06DB017}.Release|x86.ActiveCfg = Release|Any CPU
+		{B3D4B841-6CFE-4DA5-A8D9-EBFEB06DB017}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
