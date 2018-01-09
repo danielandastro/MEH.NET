@@ -28,6 +28,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Define">
+      <HintPath>bin\Debug\Define.dll</HintPath>
+    </Reference>
+    <Reference Include="mathLibrary">
+      <HintPath>bin\Debug\mathLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="WeatherNet">
+      <HintPath>bin\Debug\WeatherNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyClass.cs" />
