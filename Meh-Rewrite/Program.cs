@@ -17,7 +17,7 @@ namespace MehRewrite
         public static void Main(string[] args)
         {
 
-            Console.WriteLine("MEH System Version 2.3");
+            Console.WriteLine("MEH System Version 2.5");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
             //String dlls = "None";
