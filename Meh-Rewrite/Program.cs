@@ -28,35 +28,18 @@ namespace MehRewrite
             Boolean shutDownFlag = true;
             Console.WriteLine("Startup Variables Declared");
             Console.WriteLine("Searching for dlls");
-            /*foreach (var file in Directory.GetFiles(@"dlls", "*.dll"))
-            {
-
-                dlls = dlls + file;
-                Console.WriteLine(file);
-            }*/
-            //int presentMath = dlls.IndexOf("tinyMath.dll", StringComparison.Ordinal);
             int presentDefine = 1;
             if (presentDefine == -1)
             {
                 Console.WriteLine("Define.dll not found, press a key to break"); Console.ReadKey();
                 return;
             }
-            /*else { }
-            if (presentMath == -1)
-            {
-                Console.WriteLine("tinyMath.dll not found, press a key to break"); Console.ReadKey();
-                return;
-            }*/
             else { Console.WriteLine("All DLLs accounted for"); }
 
             Console.Write("Enter Secure Mode? ");
             secure = Console.ReadLine();
             //string os = File.ReadAllText(@"os.txt");
             string os = "linux";
-            //string plugins = File.ReadAllText(@"plugins/list.txt");
-            //string extmath = File.ReadAllText(@"plugins/descriptions/extendedmath.txt");
-            //string extcommand = File.ReadAllText(@"plugins/descriptions/extendedcommands.txt");
-            //String installed = File.ReadAllText(@"plugins/installedlist.txt");
             switch (secure)
             {
                 case "yes":
@@ -124,22 +107,26 @@ namespace MehRewrite
                         double ans = math.AddNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
+                    
                     case "subtract":
                         ans = math.SubNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
+                    
                     case "multiply":
                         ans = math.MulNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
+                    
                     case "divide":
                         ans = math.DivNumbers();
                         Console.WriteLine("Answer is " + ans);
                         break;
+                    
                     case "quit":
                         return;
+                    
                     case "define":
-
                         if (os.Equals("windows"))
                         {
                             Console.Write("Define What? ");
@@ -149,16 +136,18 @@ namespace MehRewrite
                             Console.WriteLine(defineword);
                         }
                         else { Console.WriteLine("OS not supported"); }
-
                         break;
+                
                     case "time":
                         string time = DateTime.Now.ToString("h:mm:ss tt");
                         Console.WriteLine(time);
                         break;
+                  
                     case "what is the time":
                         time = DateTime.Now.ToString("h:mm:ss tt");
                         Console.WriteLine(time);
                         break;
+                   
                     case "timer":
                         int min, sec, totalsec, mintosec, milli;
                         string strmin, strsec;
@@ -213,67 +202,17 @@ namespace MehRewrite
                             Console.ReadKey();
                             return;
                         }
-
                         break;
-
-
-
-
-
 
                     case "nuke it":
                         return;
-                    /*case "list plugins":
-                        Console.Write("List of plugins: ");
-                        // Console.WriteLine(plugins);
-                        break;
-                    case "describe":
-                        Console.Write("Plugin name: ");
-                        string pluginname = Console.ReadLine();
-                        switch (pluginname)
-                        {
-                            case "extended math":
-                                Console.WriteLine(extmath);
-                                break;
-
-                            case "extended commands":
-                                Console.WriteLine(extcommand);
-                                break;
-                            default:
-                                Console.WriteLine("Unrecognised plugin, update from github to get latest plugins");
-                                break;
-                        }
-                        break;
-                    case "plugins help":
-                        Console.WriteLine("To use plugin, download it, add its name to the installed-plugins file (copy from readme), in the system type 'plugin', then type its name, and then type in your commands");
-                        break;
-                        case "plugin":
-                        string name = Console.ReadLine();
-                        int exist = installed.IndexOf(name, StringComparison.Ordinal);
-                        switch (exist){
-                            case -1:
-                                Console.WriteLine("Plugin is not present or not listed");
-
-                                break;
-
-                                switch (name){
-                                    case "extended math":
-                                        Console.WriteLine("Coming soon")
-                                        break;
-
-                                        case "extended commands":
-                                        Console.WriteLine("Coming soon");
-                                        break;
-                    case "square": Console.WriteLine("Using Extended Math"); 
-                      Console.Write("Square what ");*/
-
 
                     default:
                         Console.WriteLine("What?I do not follow.....");
                         break;
                     case "how are you":
                         Console.WriteLine("my sole purpose of existing " +
-                            "is to fullfil your needs, how am I is not the question, its all about you");
+                        "is to fullfil your needs, how am I is not the question, its all about you");
                         break;
 
                     case "what is your name":
@@ -293,7 +232,8 @@ namespace MehRewrite
 
                     case "shut down":
                         Console.WriteLine("LOL...no one can shut me down");
-                        if (shutDownFlag == true){
+                        if (shutDownFlag == true)
+                        {
                             Console.WriteLine("please enter the code to gain access to my mainframe");
                             user = Console.ReadLine();
                             Console.WriteLine("nothing can stop exept the last code!!!!!");
@@ -309,17 +249,10 @@ namespace MehRewrite
                             }
                             else
                             {
-
                                 Console.WriteLine("i cannot be stopped");
                                 shutDownFlag = false;
-
-
-
-
                             }
-
                         }
-
                         break;
 
                     case "area":
@@ -332,30 +265,29 @@ namespace MehRewrite
                         Console.WriteLine("of kite = (Diagonal p) * (Diagonal q) / 2");
                         Console.WriteLine("51 = Who Knows");
                         break;
+                    
                     case "open chrome":
                         string page = "https://www.google.com";
                         Console.Write("Which Page (Use format like https://google.com): ");
                         page = Console.ReadLine();
                         Process.Start("chrome", @page);
-
                         break;
 
                     case "open microsoft edge":
-                        System.Diagnostics.Process.Start("microsoft-edge:http://www.google.com");
-                                           
-                      break;
+                        Process.Start("microsoft-edge:http://www.google.com");
+                        break;
 
                     case "open NRK entertainment website":
-                        System.Diagnostics.Process.Start("http://nrk-entertainment.webnode.com/ ");
-
+                        Process.Start("http://nrk-entertainment.webnode.com/ ");
                         break;
+                    
                     case "battery":
-                        var BatteryChargeStatus= SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
+                        var BatteryChargeStatus = SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
                         var BatteryFullLifetime = SystemInformation.PowerStatus.BatteryFullLifetime.ToString();
                         var BatteryLifePercent = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
                         var BatteryLifeRemaining = SystemInformation.PowerStatus.BatteryLifeRemaining.ToString();
                         var PowerLineStatus = SystemInformation.PowerStatus.PowerLineStatus.ToString();
-                        Console.WriteLine("Percent is " +BatteryLifePercent);
+                        Console.WriteLine("Percent is " + BatteryLifePercent);
                         Console.WriteLine("Charge status is " + BatteryChargeStatus);
                         Console.WriteLine("Full lifetime is " + BatteryFullLifetime);
                         Console.WriteLine("Remaining lifetime is " + BatteryLifeRemaining);
@@ -370,22 +302,8 @@ namespace MehRewrite
                         break;
 
                     case "periodic table":
-                        System.Diagnostics.Process.Start("https://www.ptable.com/");
-                        
+                        Process.Start("https://www.ptable.com/");
                         break;
-
-
-  
-
-
-
-
-
-
-
-
-
-
                 }
             }
         }
