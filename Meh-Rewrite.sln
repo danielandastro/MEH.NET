@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meh-Rewrite", "Meh-Rewrite\Meh-Rewrite.csproj", "{BD98746B-44EF-4E5B-BA01-0C46390A42D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mehChatServer", "mehChatServer\mehChatServer.csproj", "{D9B500AC-0061-490C-8BF6-2ECB061B9231}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Debug|x86.Build.0 = Debug|x86
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Release|x86.ActiveCfg = Release|x86
 		{BD98746B-44EF-4E5B-BA01-0C46390A42D6}.Release|x86.Build.0 = Release|x86
+		{D9B500AC-0061-490C-8BF6-2ECB061B9231}.Debug|x86.ActiveCfg = Debug|x86
+		{D9B500AC-0061-490C-8BF6-2ECB061B9231}.Debug|x86.Build.0 = Debug|x86
+		{D9B500AC-0061-490C-8BF6-2ECB061B9231}.Release|x86.ActiveCfg = Release|x86
+		{D9B500AC-0061-490C-8BF6-2ECB061B9231}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
