@@ -4,21 +4,21 @@ using System.Net.Sockets;
 using System.Text;
 using System.Collections;
 
+
 namespace mehChatServer
 {
-    class MainClass
+    class Program
     {
-            public static Hashtable clientsList = new Hashtable();
+        public static Hashtable clientsList = new Hashtable();
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Meh Chat server 0.1");
             TcpListener serverSocket = new TcpListener(8888);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
 
             serverSocket.Start();
-            Console.WriteLine("erver Started");
+            Console.WriteLine("Chat Server Started ....");
             counter = 0;
             while ((true))
             {
@@ -119,6 +119,4 @@ namespace mehChatServer
             }
         }
     }
-        }
-    
-
+} 

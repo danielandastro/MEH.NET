@@ -8,20 +8,50 @@ using System.Windows.Forms;
 
 using WeatherNet;
 using WeatherNet.Clients;
+using System;
+using System.Windows.Forms;
+using System.Text;
+using System.Net.Sockets;
+using System.Threading;
 
 
 namespace MehRewrite
 {
     class MainClass
     {
+
+
+        private void msg()
+        {
+            
+        } 
         public static void Main(string[] args)
         {
 
             Console.WriteLine("MEH System Version 2.5");
             Console.WriteLine("Loading Core System");
             Console.WriteLine("Declaring Startup Variables");
-            //String dlls = "None";
-            String command, user, pass, secure = null;
+
+        TcpClient clientSocket = new System.Net.Sockets.TcpClient();
+        NetworkStream serverStream = default(NetworkStream);
+            string readData = null;
+            string mssgs = "";
+            void getMessage()
+            {
+
+
+                    serverStream = clientSocket.GetStream();
+                    int buffSize = 0;
+                    byte[] inStream = new byte[10025];
+                    buffSize = clientSocket.ReceiveBufferSize;
+                    serverStream.Read(inStream, 0, buffSize);
+                    string returndata = System.Text.Encoding.ASCII.GetString(inStream);
+                    readData = "" + returndata;
+
+                         mssgs = mssgs + Environment.NewLine + " >> " + readData;
+
+            }
+                        String command, user, pass, secure = null;
             Boolean secure_mode = true;
 
             math math = new math();
@@ -304,6 +334,57 @@ namespace MehRewrite
                     case "periodic table":
                         Process.Start("https://www.ptable.com/");
                         break;
+                    case "chat:":
+
+                        Console.WriteLine("Enter IP");
+                        String ip = Console.ReadLine();
+
+                        try
+                        {
+                            clientSocket.Connect(ip, 8888);
+                        }
+
+                        catch(System.Net.Sockets.SocketException){
+                            Console.WriteLine("No server found");
+                            break;
+                        }
+
+                        serverStream = clientSocket.GetStream();
+                        Console.WriteLine("Enter User");
+                        String usnm = Console.ReadLine();
+
+                        byte[] outStream = System.Text.Encoding.ASCII.GetBytes(usnm + "$");
+                        serverStream.Write(outStream, 0, outStream.Length);
+                        serverStream.Flush();
+
+                        while(true){
+                            Console.WriteLine("Enter c to check messages, enter s to send message, or e to exit");
+                            String cm = Console.ReadLine();
+                            if (cm.Equals("c")){
+                                Thread cThread = new Thread(getMessage);
+                                cThread.Start();
+                                Console.WriteLine(mssgs);
+                            }
+                            else if (cm.Equals("s")){
+                                String msgg = Console.ReadLine();
+                                byte[] ooutStream = System.Text.Encoding.ASCII.GetBytes(msgg + "$");
+                                serverStream.Write(ooutStream, 0, ooutStream.Length);
+                                serverStream.Flush();
+
+                            }
+                            else if (cm.Equals("e")){
+                                clientSocket.Close();
+
+                            }
+                        }
+
+
+                
+
+        
+
+
+
                 }
             }
         }
