@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using System.IO;
+using seRead;
 using Define;
 using mathLibrary;
 
@@ -303,6 +303,9 @@ namespace MehRewrite
 
                     case "periodic table":
                         Process.Start("https://www.ptable.com/");
+                        break;
+                    case "serial":
+                        seRead.Begin.Start();
                         break;
                 }
             }
